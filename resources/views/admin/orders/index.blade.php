@@ -25,7 +25,7 @@
         @forelse($orders as $order)
         <tr>
             <td>{{ $order->id }}</td>
-            <td>{{ $order->customer->name }}</td>
+            <td>{{ $order->customer ? $order->customer->name : 'UserDeleted' }}</td>
             <td>{{ number_format($order->total_amount,2) }}</td>
             <td>{{ $order->status }}</td>
             <td>{{ $order->items_count }}</td>
